@@ -6,4 +6,4 @@ class Person(models.Model):
     last_name = models.CharField(max_length=30)
 
 class TeachingGroup(models.Model):
-    students = models.OneToOneField(Person, null=True, on_delete=models.SET_NULL)
+    students = models.ManyToManyField(Person)
