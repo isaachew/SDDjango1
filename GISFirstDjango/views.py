@@ -3,6 +3,6 @@ from .models import Person
 
 def splash(request):
     name = 'Isaac'
-    people = Person.objects.all()
+    people = Person.objects.filter(age__gte=20)
     debug_people = list(people)
-    return render(request, "splash.html", {'name': name})
+    return render(request, "splash.html", {'name': name,'people':people})
